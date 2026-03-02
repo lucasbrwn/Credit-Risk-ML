@@ -1,4 +1,4 @@
-# Credit Default Prediction
+# Credit Default Prediction (Python)
 
 Beginner machine learning project that predicts whether a borrower will experience **serious delinquency within 2 years** using the *Give Me Some Credit* dataset.
 
