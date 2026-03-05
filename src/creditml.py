@@ -1,31 +1,3 @@
-"""
-Credit Default Prediction - Machine Learning Project
-
-Goal:
-    Predict whether a borrower will experience serious delinquency within 2 years.
-
-What this script does:
-    1) Loads and cleans the dataset using clean() from data_cleaning.py
-       - Fills missing MonthlyIncome and NumberOfDependents with the median
-       - Clips extreme outliers for MonthlyIncome and DebtRatio
-    2) Splits the data into training and testing sets using stratified sampling
-       to preserve the class distribution of defaults and non-defaults
-    3) Trains three machine learning models:
-       - Logistic Regression
-       - Decision Tree
-       - K-Nearest Neighbors (KNN)
-    4) Evaluates model performance using:
-       - Precision, Recall, and F1-score
-       - Confusion matrix
-    5) Compares how well each model predicts credit default
-
-Notes:
-    - The dataset is imbalanced, so stratified splitting is used to maintain
-      similar proportions of default and non-default borrowers in both sets.
-    - This is an educational project demonstrating basic machine learning
-      model comparison for credit risk prediction.
-"""
-
 import pandas as pd
 
 from sklearn.model_selection import train_test_split
