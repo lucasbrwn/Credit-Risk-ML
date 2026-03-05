@@ -1,49 +1,34 @@
-# Credit Default Prediction (Python)
+# Credit Risk ML (Python)
 
-Beginner machine learning project that predicts whether a borrower will experience **serious delinquency within 2 years** using the *Give Me Some Credit* dataset.
+A machine learning project that predicts whether a borrower will experience serious delinquency within 2 years. Built to practice data cleaning, model training, evaluation, and interpreting results using basic classification models.
 
-## Overview
-- Data cleaning (missing value handling and outlier clipping)
-- Stratified train/test split for imbalanced data
-- Models:
-  - Random Forest (main model)
-  - Logistic Regression (baseline)
-- Evaluation using ROC-AUC and classification metrics
-- Threshold tuning to improve recall for high-risk borrowers
-- Random Forest feature importance
-- Simple business impact estimation
+## Features
 
-## Dataset
-This project uses the Kaggle dataset:  
-https://www.kaggle.com/c/GiveMeSomeCredit/data  
+- Data preprocessing:
+  - Handles missing values in the dataset
+  - Clips extreme outliers for stability
+- Train/test splitting:
+  - Stratified sampling to preserve class distribution
+- Machine learning models:
+  - Logistic Regression
+  - Decision Tree
+  - K-Nearest Neighbors (KNN)
+- Model evaluation:
+  - Classification report (precision, recall, F1-score)
+  - Confusion matrix
+- Business impact analysis:
+  - Estimates financial impact of false positives and false negatives
 
-Download `cs-training.csv` and place it in:
+## Models Used
 
-```
-data/
-```
+- Logistic Regression
+- Decision Tree
+- K-Nearest Neighbors (KNN)
 
-(The dataset is not included due to Kaggle licensing.)
+## Install and Run
 
-## How to Run
 From the project root:
 
-```
+```bash
 pip install -r requirements.txt
 python src/creditml.py
-```
-
-## Results
-- Random Forest ROC-AUC ≈ **0.84**
-- Logistic Regression ROC-AUC ≈ **0.80**
-- Random Forest performed better overall
-
-## Interpretation
-The Random Forest model showed stronger performance in distinguishing between high-risk and low-risk borrowers.
-
-Lowering the decision threshold to 0.25 increased recall for default cases, allowing the model to identify more risky borrowers. This introduces more false positives, reflecting a real-world tradeoff between risk prevention and approving good customers.
-
-Feature importance analysis indicated that credit utilization, age, debt ratio, and income were among the strongest predictors of default risk.
-
-## Tech Stack
-Python, Pandas, Scikit-learn
